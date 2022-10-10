@@ -1,0 +1,45 @@
+{% block content %}
+<style>
+body {
+    margin: 0;
+    color: #292929;
+    background-color: #FFFBED;
+    font-family: sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align:center;
+}
+
+.header__btn {
+    padding: 10px 20px;
+    border: 1px solid #FD9339;
+    color: #FD9339;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+    margin-left: 600px;
+}
+
+
+
+
+</style>
+<main>
+<div class="header__wrapper">
+    <h1>Личный кабинет пользователя</h1>
+    <a class="header__btn" href="{% url 'logout' %}">Выйти</a>
+</div>
+{% endblock %}
+</main>
+
+

@@ -1,0 +1,69 @@
+{% block content %}
+  <h2>Войдите в аккаунт</h2>
+
+    <form method="post">
+      {% csrf_token %}
+
+        {{ form.as_p }}
+
+          <input type="submit" value="Вход">
+
+    </form>
+
+<hr>
+<a class="header__btn" href="{% url 'home' %}">Вернуться на главную</a>
+{% endblock %}
+
+<style>
+input[type="submit"] {
+    cursor: pointer;
+
+}
+
+label {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#id_checkbox {
+    display: inline-block;
+    cursor: pointer;
+}
+input {
+    display: block;
+    margin: 0 auto;
+    padding: 3px 15px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+body {
+    margin: 0;
+    background-color: #FFFBED;
+    text-align: center;
+}
+.color > a {
+    color: blue;
+}
+
+
+
+.registr__title {
+    text-align: center;
+}
+
+.header__btn {
+    padding: 10px 20px;
+    border: 1px solid #FD9339;
+    color: #FD9339;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+    text-decoration: none;
+}
+
+
+</style>
+
+

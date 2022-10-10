@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a class="header__logo" href="/">Design.pro</a>
+            <h1 class="header__title">Добро пожаловать, {{ user.username|default:'Гость' }}</h1>
+            <div class="header__wrapper">
+                {% if user.is_authenticated %}
+              <a class="header__btn" href="{% url 'logout' %}">Выйти</a>
+                <a class="header__btn" href="{% url 'profile' %}">Профиль</a>
+                {% else %}
+                <a class="header__btn" href="{% url 'signup' %}">Регистрация</a>
+                <a class="header__btn" href="{% url 'login' %}">Войти</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+
+
+<style>
+
+body {
+    margin: 0;
+    color: #292929;
+    background-color: #FFFBED;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.container.container--smaller {
+    max-width: 1100px;
+}
+
+.header {
+    padding: 25px 0;
+    border-bottom: 2px solid #DFDACE;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    color: #292929;
+}
+
+.header__title {
+    color: #292929;
+    margin: 0;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header__btn {
+    padding: 10px 20px;
+    border: 1px solid #FD9339;
+    color: #FD9339;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+}
+
+.header__btn:not(:last-child) {
+    margin-right: 25px;
+}
+
+</style>
+
+
+</body>
+</html>
